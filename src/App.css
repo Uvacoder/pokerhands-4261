@@ -1,33 +1,36 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app-top {
+  /* background-color: red; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-bottom {
+  display: flex;
+}
+
+.app-bottom .hands-table {
+  flex: 1;
+}
+
+.app-bottom .hands-list {
+  width: 30vw;
+}
+
+.spades {
+  background-image: url(./images/spades.svg);
+}
+
+.hearts {
+  background-image: url(./images/hearts.svg);
+}
+
+.diamonds {
+  background-image: url(./images/diamonds.svg);
+}
+
+.clubs {
+  background-image: url(./images/clubs.svg);
 }

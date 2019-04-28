@@ -1,0 +1,54 @@
+.hands-table {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.hands-table-row {
+  flex: 1;
+  display: flex;
+}
+
+.hands-table-row > div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hands-table-row > div::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.hands-table-header {
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  outline: 1px solid white;
+}
+
+.hands-table-tile {
+  color: black;
+  cursor: pointer;
+  background-color: white;
+  outline: 1px solid black;
+}
+
+.hands-table-tile.pair {
+  outline: 1px solid black;
+  background-color: lightgrey;
+}
+
+.hands-table-tile.suite {
+  /* background-color: rgba(0, 0, 0, 0.1); */
+}
+
+.hands-table-tile.selected {
+  background-color: red!important;
+}
+
+.hands-table-text {
+
+}

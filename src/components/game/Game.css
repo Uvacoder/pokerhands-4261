@@ -1,0 +1,40 @@
+.game {
+  display: flex;
+  height: 210px;
+}
+
+.game .game-stats {
+  flex: 1;
+}
+
+.game .game-board {
+  width: 525px;
+  display: flex;
+  padding: 0 16px 16px;
+  flex-direction: column;
+  background-color: #efefef;
+}
+
+.game .game-hand {
+  width: 200px;
+  display: flex;
+  padding: 0 16px 16px;
+  flex-direction: column;
+  background-color: lightgrey;
+}
+
+.game .game-hand > div,
+.game .game-board > div {
+  flex: 1;
+  display: flex;
+}
+
+.game .game-hand > div > div,
+.game .game-board > div > div {
+  margin-right: 16px;
+}
+
+.game .game-hand > div > div:last-child,
+.game .game-board > div > div:last-child {
+  margin-right: 0;
+}
