@@ -4,7 +4,7 @@ import Card from './Card';
 import Colors from './Colors';
 import Figures from './Figures';
 
-import './CardPicker.css';
+import './CardPicker.scss';
 
 const CardPicker = props => {
 
@@ -19,11 +19,16 @@ const CardPicker = props => {
     ref.current = color || false;
   });
 
+  const reset = () => {
+    setColor(null);
+    setFigure(null);
+  };
+
   return (
     <div className="card-picker">
       {figure && !color && <Colors onChange={setColor} />}
       {!figure && !color && <Figures onChange={setFigure} />}
-      {figure && color && <Card figure={figure} color={color} />}
+      {figure && color && <Card figure={figure} color={color} onReset={reset} />}
     </div>
   );
 };

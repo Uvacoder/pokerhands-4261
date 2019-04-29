@@ -1,0 +1,117 @@
+@import '../../styles/colors.scss';
+
+.card-picker {
+  flex: 1;
+  padding: 4px 2px;
+  display: flex;
+  border-radius: 6px;
+  flex-direction: column;
+  background-color: white;
+  border: 2px solid $primary-color;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+}
+
+.card-picker-card,
+.card-picker-colors,
+.card-picker-figures {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 -4px 0;
+  justify-content: space-around;
+}
+
+.card-picker-color,
+.card-picker-figure {
+  display: flex;
+  margin: 0 0 4px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-picker-color {
+  flex: 0 0 45%;
+  cursor: pointer;
+  border-radius: 3px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.card-picker-figure {
+  flex: 0 0 23%;
+  cursor: pointer;
+  border-radius: 3px;
+  color: $primary-color;
+  border: 2px solid $light-grey;
+  background-color: $light-grey;
+}
+
+.card-picker-figure:hover {
+  color: $light-grey;
+  border: 2px solid $primary-color;
+  background-color: $primary-color;
+}
+
+.card-picker-color:hover {
+  background-color: #efefef;
+}
+
+.card-picker-color::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.card-picker-card {
+  flex: 1;
+  margin: 0;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &.hearts, &.diamonds {
+    color: $red;
+  }
+
+  &.spades, &.clubs {
+    color: black;
+  }
+
+  &:hover {
+
+    .reset {
+      display: block;
+    }
+  }
+
+  & > span {
+    font-weight: bold;
+
+    &:first-child {
+      top: 0;
+      left: 2px;
+      position: absolute;
+    }
+
+    &:last-child {
+      bottom: 0;
+      right: 2px;
+      position: absolute;
+    }
+
+    &.reset {
+      top: -2px;
+      right: 4px;
+      display: none;
+      cursor: pointer;
+      font-weight: bold;
+      position: absolute;
+      // text-transform: uppercase;
+      color: darken($light-grey, 10%);
+
+      &:hover {
+        color: darken($light-grey, 20%);
+      }
+    }
+  }
+}

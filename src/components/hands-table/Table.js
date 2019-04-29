@@ -5,7 +5,7 @@ import Header from './Header';
 import CardModel from '../../models/Card';
 import HandModel, { Cards } from '../../models/Hand';
 
-import './Table.css';
+import './Table.scss';
 
 const HandsTable = props => {
 
@@ -36,7 +36,7 @@ const HandsTable = props => {
   return (
     <div className="hands-table">
       <div className="hands-table-row">
-        <div></div>
+        <div className="hands-table-header"></div>
         {Cards.map((card, i) => <Header key={i} card={card} />)}
       </div>
       {Cards.map(card => getRow(card))}

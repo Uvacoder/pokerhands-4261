@@ -1,3 +1,5 @@
+@import '../../styles/colors.scss';
+
 .hands-table {
   display: flex;
   flex-direction: column;
@@ -23,23 +25,31 @@
 }
 
 .hands-table-header {
+  margin: 3px;
   color: white;
   font-weight: bold;
-  background-color: black;
-  outline: 1px solid white;
+  border-radius: 3px;
+  background-color: $primary-color;
 }
 
 .hands-table-tile {
+  margin: 3px;
   color: black;
   cursor: pointer;
-  background-color: white;
-  outline: 1px solid black;
+  border-radius: 3px;
+  color: $primary-color;
+  background-color: $light-grey;
+
+  &:hover, &.pair:hover {
+    color: $light-grey;
+    background-color: $primary-color;
+  }
+
+  &.pair {
+    background-color: darken($light-grey, 10%);
+  }
 }
 
-.hands-table-tile.pair {
-  outline: 1px solid black;
-  background-color: lightgrey;
-}
 
 .hands-table-tile.suite {
   /* background-color: rgba(0, 0, 0, 0.1); */

@@ -1,0 +1,71 @@
+@import '../../styles/colors.scss';
+
+.game {
+  width: 600px;
+  display: flex;
+  height: 430px;
+  padding: 0 16px 16px;
+  flex-wrap: wrap;
+  background-color: $light-grey;
+  border: 1px solid $primary-color;
+}
+
+.game .game-board {
+  height: 50%;
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.game .game-hand {
+  height: 50%;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+}
+
+.game .game-hand > div,
+.game .game-board > div {
+  flex: 1;
+  display: flex;
+}
+
+.game .game-hand > div > div {
+  margin-right: 8px;
+}
+
+.game .game-board > div > div {
+  margin-right: 8px;
+}
+
+.game .game-hand > div > div:last-child,
+.game .game-board > div > div:last-child {
+  margin-right: 0;
+}
+
+.game .game-stats {
+  flex: 1;
+  height: 50%;
+  display: flex;
+  padding: 0 0 0 16px;
+  flex-direction: column;
+
+  .game-stats-box {
+    flex: 1;
+    display: flex;
+    padding: 0 8px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    align-items: center;
+    background-color: white;
+    justify-content: space-between;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h4 {
+      margin: 0;
+    }
+  }
+}

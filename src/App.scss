@@ -1,3 +1,13 @@
+@import './styles/colors.scss';
+
+body {
+  color: $primary-color;
+}
+
+h1, h2, h3, h4 {
+  margin: 16px 0;
+}
+
 .app {
   display: flex;
   flex-direction: column;

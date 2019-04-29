@@ -1,41 +1,56 @@
 import React, { useState, useEffect } from 'react';
 
-const PreFlop = () => (
-  <div>pre-flop</div>
+const PreFlop = props => (
+  <div className="game-stats-box">
+    <h4>Pre-Flop</h4>
+    <div>{
+      props.game.hand
+      && `${Math.round(props.game.getEquity('preflop'))}%`
+    }</div>
+  </div>
 );
 
-const Flop = () => (
-  <div>flop</div>
+const Flop = props => (
+  <div className="game-stats-box">
+    <h4>Flop</h4>
+    <div>{props.game.hand && props.game.getEquity('preflop')}</div>
+  </div>
 );
 
-const River = () => (
-  <div>river</div>
+const River = props => (
+  <div className="game-stats-box">
+    <h4>River</h4>
+    <div>{props.game.hand && props.game.getEquity('preflop')}</div>
+  </div>
 );
 
-const Turn = () => (
-  <div>turn</div>
+const Turn = props => (
+  <div className="game-stats-box">
+    <h4>Turn</h4>
+    <div>{props.game.hand && props.game.getEquity('preflop')}</div>
+  </div>
 );
 
 const Stats = props => {
 
-  const [hand, setHand] = useState(props.hand);
-  const [board, setBoard] = useState(props.board);
+  const [hand, setHand] = useState(props.game.hand);
+  const [board, setBoard] = useState(props.game.board);
 
   useEffect(() => {
-    setHand(props.hand);
-  }, [props.hand]);
+    setHand(props.game.hand);
+  }, [props.game.hand]);
 
   useEffect(() => {
-    setBoard(props.board);
-  }, [props.board]);
+    setBoard(props.game.board);
+  }, [props.game.board]);
 
   return (
     <div className="game-stats">
-      <div>Hand: {hand && hand.getName()}</div>
-      <PreFlop hand={hand} />
-      <Flop hand={hand} board={board} />
-      <River hand={hand} board={board} />
-      <Turn hand={hand} board={board} />
+      <h3>Equity:</h3>
+      <PreFlop game={props.game} />
+      <Flop game={props.game} />
+      <River game={props.game} />
+      <Turn game={props.game} />
     </div>
   );
 };
