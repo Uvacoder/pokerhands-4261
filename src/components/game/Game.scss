@@ -8,6 +8,20 @@
   flex-wrap: wrap;
   background-color: $light-grey;
   border: 1px solid $primary-color;
+
+  .game-hand {
+    height: 50%;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+
+    h3 span {
+      padding: 4px;
+      margin-left: 4px;
+      border-radius: 3px;
+      background-color: white;
+    }
+  }
 }
 
 .game .game-board {
@@ -17,12 +31,7 @@
   flex-direction: column;
 }
 
-.game .game-hand {
-  height: 50%;
-  width: 230px;
-  display: flex;
-  flex-direction: column;
-}
+
 
 .game .game-hand > div,
 .game .game-board > div {

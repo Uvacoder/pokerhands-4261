@@ -5,7 +5,8 @@ const PreFlop = props => (
     <h4>Pre-Flop</h4>
     <div>{
       props.game.hand
-      && `${Math.round(props.game.getEquity('preflop'))}%`
+      ? `${props.game.getEquity('preflop')}%`
+      : 'N/A'
     }</div>
   </div>
 );
@@ -13,28 +14,28 @@ const PreFlop = props => (
 const Flop = props => (
   <div className="game-stats-box">
     <h4>Flop</h4>
-    <div>{props.game.hand && props.game.getEquity('preflop')}</div>
+      <div>N/A</div>
   </div>
 );
 
 const River = props => (
   <div className="game-stats-box">
     <h4>River</h4>
-    <div>{props.game.hand && props.game.getEquity('preflop')}</div>
+      <div>N/A</div>
   </div>
 );
 
 const Turn = props => (
   <div className="game-stats-box">
     <h4>Turn</h4>
-    <div>{props.game.hand && props.game.getEquity('preflop')}</div>
+      <div>N/A</div>
   </div>
 );
 
 const Stats = props => {
 
-  const [hand, setHand] = useState(props.game.hand);
-  const [board, setBoard] = useState(props.game.board);
+  const [, setHand] = useState(props.game.hand);
+  const [, setBoard] = useState(props.game.board);
 
   useEffect(() => {
     setHand(props.game.hand);

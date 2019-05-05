@@ -40,25 +40,22 @@
   color: $primary-color;
   background-color: $light-grey;
 
-  &:hover, &.pair:hover {
+  &.pair {
+    background-color: darken($light-grey, 10%);
+  }
+
+  &:hover {
     color: $light-grey;
     background-color: $primary-color;
   }
 
-  &.pair {
-    background-color: darken($light-grey, 10%);
+  $positions-list: utg, hj, cu, bt, sb;
+  @each $position in $positions-list {
+    $color: map-get($positions-colors, #{$position});
+
+    &.#{$position} {
+      background-color: $color;
+      color: darken($color, 35%);
+    }
   }
-}
-
-
-.hands-table-tile.suite {
-  /* background-color: rgba(0, 0, 0, 0.1); */
-}
-
-.hands-table-tile.selected {
-  background-color: red!important;
-}
-
-.hands-table-text {
-
 }

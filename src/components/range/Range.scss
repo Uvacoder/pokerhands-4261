@@ -1,5 +1,95 @@
+@import '../../styles/colors.scss';
+
 .range {
   flex: 1;
   display: flex;
-  background-color: red;
+  outline: 1px solid black;
+}
+
+.hands-list {
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h3 {
+    position: relative;
+    margin: 0px 0 16px;
+
+    span {
+      right: 0;
+      bottom: 0;
+      font-size: 70%;
+      position: absolute;
+    }
+  }
+
+  .position {
+    position: relative;
+    border-radius: 6px;
+    flex-basis: calc(16.6% - 16px);
+    background-color: $light-grey;
+    border: 2px solid $primary-color;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+
+    h4 {
+      margin: 8px;
+      padding-left: 24px;
+      position: relative;
+      text-transform: uppercase;
+
+      span {
+        right: 0;
+        bottom: 0;
+        font-size: 70%;
+        position: absolute;
+        text-transform: lowercase;
+      }
+
+      &::before {
+        left: 0;
+        width: 16px;
+        height: 16px;
+        content: ' ';
+        border-radius: 50%;
+        position: absolute;
+        background-color: black;
+        border: 1px solid black;
+      }
+    }
+
+    $positions-list: utg, hj, cu, bt, sb;
+    @each $position in $positions-list {
+      $color: map-get($positions-colors, #{$position});
+
+      &.#{$position} h4::before {
+        background-color: $color;
+        border-color: darken($color, 20%);
+      }
+    }
+
+    .hands {
+      margin: 8px 8px 4px 8px;
+
+      & > div {
+        font-size: 70%;
+        padding: 6px 4px;
+        border-radius: 4px;
+        margin: 0 4px 4px 0;
+        display: inline-block;
+        background-color: white;
+      }
+    }
+
+    &.selected {
+      background-color: white;
+
+      .hands {
+
+        & > div {
+          background-color: $light-grey;
+        }
+      }
+    }
+  }
 }

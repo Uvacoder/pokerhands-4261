@@ -11,14 +11,9 @@ const Game = () => {
 
   const [game, setGame] = useState(new GameModel());
   const [hand, setHand] = useState(null);
-  const [board, setBoard] = useState(null);
+  const [, setBoard] = useState(null);
 
   useEffect(() => {
-    console.log('Game useEffect: game', game);
-  }, [game]);
-
-  useEffect(() => {
-    console.log('Game useEffect: hand', hand);
     setGame(new GameModel({ hand }));
   }, [hand]);
 

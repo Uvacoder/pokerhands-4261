@@ -32,7 +32,7 @@ const Hand = props => {
 
   return (
     <div className="game-hand">
-      <h3>Your Hand: {hand && hand.getName()}</h3>
+      <h3>Your Hand: <span>{hand && hand.getName()}</span></h3>
       <div>
         <CardPicker onChange={onFirstSelect} />
         <CardPicker onChange={onSecondSelect} />

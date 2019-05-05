@@ -9,26 +9,29 @@ import './Table.scss';
 
 const HandsTable = props => {
 
-  const getTile = (first, second) => {
+  const getHand = (first, second) => {
     const suite = Cards.indexOf(first) < Cards.indexOf(second);
 
-    const hand = new HandModel([
+    return props.hands.filter(hand => (
+      hand.getName() === (suite
+        ? (first + second + 's')
+        : (second + first + (first === second ? '' : 'o')))
+    ))[0] || new HandModel([
       new CardModel({ figure: first, color: 'spades' }),
       new CardModel({ figure: second, color: (suite ? 'spades' : 'hearts') })
     ]);
-
-    return <Tile
-      hand={hand}
-      key={hand.getName()}
-      onChange={props.onChange}
-    />;
   };
 
   const getRow = first => {
     return (
       <div key={first} className="hands-table-row">
         <Header card={first} />
-        {Cards.map(second => getTile(first, second))}
+        {Cards.map((second, i) => {
+          const hand = getHand(first, second);
+
+          return <Tile key={i} hand={hand}
+            onChange={props.onChange.bind(this, hand)} />;
+        })}
       </div>
     );
   };
