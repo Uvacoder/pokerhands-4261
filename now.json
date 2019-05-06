@@ -1,18 +1,10 @@
 {
   "version": 2,
   "name": "ranger",
-  "env": {
-    "REACT_APP_VERSION": "@npm_package_version",
-    "REACT_APP_NAME": "@npm_package_name"
-  },
   "builds": [{
     "src": "package.json",
     "use": "@now/static-build",
-    "config": { "distDir": "build" },
-    "env": {
-      "REACT_APP_VERSION": "@npm_package_version",
-      "REACT_APP_NAME": "@npm_package_name"
-    }
+    "config": { "distDir": "build" }
   }],
   "routes": [{
     "src": "/static/(.*)",
