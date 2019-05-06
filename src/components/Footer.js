@@ -2,6 +2,8 @@ import React from 'react';
 
 import './Footer.scss';
 
+console.log('PROCESS', process.env);
+
 const Footer = () => (
   <div className="footer">
     <div>Chewam © 2019</div>

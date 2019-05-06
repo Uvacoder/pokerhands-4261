@@ -1,32 +1,44 @@
 {
   "version": 2,
   "name": "ranger",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": { "distDir": "build" }
+  "env": {
+    "REACT_APP_VERSION": "@npm_package_version",
+    "REACT_APP_NAME": "@npm_package_name"
+  },
+  "builds": [{
+    "src": "package.json",
+    "use": "@now/static-build",
+    "config": { "distDir": "build" },
+    "env": {
+      "REACT_APP_VERSION": "@npm_package_version",
+      "REACT_APP_NAME": "@npm_package_name"
     }
-  ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "headers": { "cache-control": "s-maxage=31536000,immutable" },
-      "dest": "/static/$1"
-    },
-    { "src": "/favicon.ico", "dest": "/favicon.ico" },
-    { "src": "/asset-manifest.json", "dest": "/asset-manifest.json" },
-    { "src": "/manifest.json", "dest": "/manifest.json" },
-    { "src": "/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },
-    {
-      "src": "/service-worker.js",
-      "headers": { "cache-control": "s-maxage=0" },
-      "dest": "/service-worker.js"
-    },
-    {
-      "src": "/(.*)",
-      "headers": { "cache-control": "s-maxage=0" },
-      "dest": "/index.html"
+  }],
+  "routes": [{
+    "src": "/static/(.*)",
+    "dest": "/static/$1",
+    "headers": {
+      "cache-control": "s-maxage=31536000,immutable"
     }
-  ]
+  }, {
+    "src": "/favicon.ico",
+    "dest": "/favicon.ico"
+  }, {
+    "src": "/asset-manifest.json",
+    "dest": "/asset-manifest.json"
+  }, {
+    "src": "/manifest.json",
+    "dest": "/manifest.json"
+  }, {
+    "src": "/precache-manifest.(.*)",
+    "dest": "/precache-manifest.$1"
+  }, {
+    "src": "/service-worker.js",
+    "dest": "/service-worker.js",
+    "headers": { "cache-control": "s-maxage=0" }
+  }, {
+    "src": "/(.*)",
+    "dest": "/index.html",
+    "headers": { "cache-control": "s-maxage=0" }
+  }]
 }
