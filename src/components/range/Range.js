@@ -52,8 +52,13 @@ const Range = () => {
 
   return (
     <div className="range">
-      <HandsTable hands={hands} onChange={onHandChange} />
-      <HandsList hands={hands} onChange={onPositionChange} />
+      <HandsTable
+        hands={hands}
+        position={position}
+        onChange={onHandChange} />
+      <HandsList
+        hands={hands}
+        onChange={onPositionChange} />
     </div>
   );
 };

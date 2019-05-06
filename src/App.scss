@@ -1,46 +1,44 @@
-@import './styles/colors.scss';
-
-body {
-  color: $primary-color;
-}
-
-h1, h2, h3, h4 {
-  margin: 16px 0;
-}
+@import './styles/common.scss';
 
 .app {
+  flex: 1;
   display: flex;
   flex-direction: column;
+
+  .content {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .range, .game {
+    margin: $size;
+  }
 }
 
-.app-top {
-  /* background-color: red; */
+@each $suit, $code in $suit-unicodes {
+  .#{$suit}::before {
+    content: $code;
+    position: absolute;
+    @include suit-color($suit);
+  }
 }
 
-.app-bottom {
+.logo {
+  top: 1px;
+  width: 28px;
+  height: 28px;
   display: flex;
-}
+  flex-wrap: wrap;
+  position: relative;
 
-.app-bottom .hands-table {
-  flex: 1;
-}
-
-.app-bottom .hands-list {
-  width: 30vw;
-}
-
-.spades {
-  background-image: url(./images/spades.svg);
-}
-
-.hearts {
-  background-image: url(./images/hearts.svg);
-}
-
-.diamonds {
-  background-image: url(./images/diamonds.svg);
-}
-
-.clubs {
-  background-image: url(./images/clubs.svg);
+  & > div {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 50%;
+    display: flex;
+    font-size: 14px;
+    line-height: 14px;
+    align-items: center;
+    justify-content: center;
+  }
 }

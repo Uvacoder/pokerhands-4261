@@ -4,7 +4,7 @@ const Tile = props => {
 
   const getClasses = () => {
     return `
-      hands-table-tile
+      tile
       ${props.hand.isPair() ? 'pair' : ''}
       ${props.hand.isSuite() ? 'suite' : ''}
       ${props.hand.position ? props.hand.position : ''}
@@ -16,7 +16,7 @@ const Tile = props => {
       onClick={props.onChange}
       className={getClasses()}
     >
-      <span className="hands-table-text">
+      <span className="text">
         {props.hand.getName()}
         <div>{props.hand.nash}</div>
       </span>

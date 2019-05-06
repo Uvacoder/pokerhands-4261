@@ -24,7 +24,7 @@ const HandsTable = props => {
 
   const getRow = first => {
     return (
-      <div key={first} className="hands-table-row">
+      <div key={first} className="row">
         <Header card={first} />
         {Cards.map((second, i) => {
           const hand = getHand(first, second);
@@ -37,9 +37,9 @@ const HandsTable = props => {
   };
 
   return (
-    <div className="hands-table">
-      <div className="hands-table-row">
-        <div className="hands-table-header"></div>
+    <div className={`table ${props.position}`}>
+      <div className="row">
+        <div className="header"></div>
         {Cards.map((card, i) => <Header key={i} card={card} />)}
       </div>
       {Cards.map(card => getRow(card))}

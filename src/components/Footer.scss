@@ -1,0 +1,15 @@
+@import '../styles/common.scss';
+
+.footer {
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  display: flex;
+  font-size: 80%;
+  padding: $size;
+  line-height: 100%;
+  // position: absolute;
+  align-items: center;
+  // background-color: red;
+  justify-content: space-between;
+}

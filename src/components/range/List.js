@@ -56,9 +56,9 @@ const List = props => {
   const onPositionSelect = position => setSelected(position);
 
   return (
-    <div className="hands-list">
+    <div className="list">
       <h3>
-        Positions
+        POSITIONS
         <span>
           {hands.length} hands
           ({ Math.round(hands.length / 169 * 100) }%)

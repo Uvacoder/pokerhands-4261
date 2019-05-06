@@ -1,14 +1,14 @@
-@import '../../styles/colors.scss';
+@import '../../styles/common.scss';
 
 .card-picker {
   flex: 1;
-  padding: 4px 2px;
   display: flex;
-  border-radius: 6px;
+  border-radius: $radius;
   flex-direction: column;
   background-color: white;
-  border: 2px solid $primary-color;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+  box-shadow: $box-shadow;
+  padding: $size/4 $size/8;
+  border: $size/8 solid $primary-color;
 }
 
 .card-picker-card,
@@ -16,22 +16,23 @@
 .card-picker-figures {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 -4px 0;
+  margin: 0 0 $size/4*-1 0;
   justify-content: space-around;
 }
 
 .card-picker-color,
 .card-picker-figure {
   display: flex;
-  margin: 0 0 4px 0;
   align-items: center;
+  margin: 0 0 $size/4 0;
   justify-content: center;
 }
 
 .card-picker-color {
   flex: 0 0 45%;
   cursor: pointer;
-  border-radius: 3px;
+  font-size: $size*2;
+  border-radius: $radius/2;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -39,16 +40,16 @@
 .card-picker-figure {
   flex: 0 0 23%;
   cursor: pointer;
-  border-radius: 3px;
   color: $primary-color;
-  border: 2px solid $light-grey;
+  border-radius: $radius/2;
   background-color: $light-grey;
+  border: $size/8 solid $light-grey;
 }
 
 .card-picker-figure:hover {
   color: $light-grey;
-  border: 2px solid $primary-color;
   background-color: $primary-color;
+  border: $size/8 solid $primary-color;
 }
 
 .card-picker-color:hover {
@@ -64,17 +65,21 @@
 .card-picker-card {
   flex: 1;
   margin: 0;
+  display: flex;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 100%;
   position: relative;
+  align-items: center;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  font-family: 'Oswald', sans-serif;
 
-  &.hearts, &.diamonds {
-    color: $red;
-  }
-
-  &.spades, &.clubs {
-    color: black;
+  @each $suit, $color in $suit-colors {
+    &.color-#{$suit} {
+      color: $color;
+    }
   }
 
   &:hover {
@@ -85,29 +90,33 @@
   }
 
   & > span {
+    // flex: 1;
+    font-size: $size;
+    line-height: 100%;
     font-weight: bold;
 
     &:first-child {
       top: 0;
-      left: 2px;
+      left: $size/8;
       position: absolute;
     }
 
     &:last-child {
-      bottom: 0;
-      right: 2px;
+      bottom: 1 + $size/8 * -1;
+      right: $size/8 - 1;
       position: absolute;
+      transform: rotate(180deg);
     }
 
     &.reset {
       top: -2px;
-      right: 4px;
       display: none;
+      right: $size/4;
       cursor: pointer;
       font-weight: bold;
       position: absolute;
-      // text-transform: uppercase;
       color: darken($light-grey, 10%);
+      font-family: 'PT Sans', sans-serif;
 
       &:hover {
         color: darken($light-grey, 20%);

@@ -1,74 +1,76 @@
-@import '../../styles/colors.scss';
+@import '../../styles/common.scss';
 
-.hands-table {
+.table {
   display: flex;
   flex-direction: column;
   background-color: white;
-}
 
-.hands-table-row {
-  flex: 1;
-  display: flex;
-}
-
-.hands-table-row > div {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hands-table-row > div::after {
-  content: '';
-  display: block;
-  padding-bottom: 100%;
-}
-
-.hands-table-header {
-  margin: 3px;
-  color: white;
-  font-weight: bold;
-  border-radius: 3px;
-  background-color: $primary-color;
-}
-
-.hands-table-tile {
-  margin: 3px;
-  color: black;
-  cursor: pointer;
-  border-radius: 3px;
-  background-color: $light-grey;
-  color: darken($light-grey, 20%);
-
-  &.pair {
-    background-color: darken($light-grey, 10%);
-  }
-
-  &:hover {
-    color: $light-grey;
-    background-color: darken($light-grey, 20%);
-  }
-
-  $positions-list: utg, hj, cu, bt, sb;
-  @each $position in $positions-list {
-    $color: map-get($positions-colors, #{$position});
-
-    &.#{$position} {
-      background-color: $color;
-      color: darken($color, 35%);
-
-      &:hover {
-        background-color: darken($color, 35%);
-        color: $color;
-      }
+  @each $position, $color in $positions-colors {
+    &.#{$position} .tile.#{$position} {
+      box-shadow: $box-shadow;
     }
   }
 
-  .hands-table-text {
-    text-align: center;
+  .header {
+    color: white;
+    font-weight: bold;
+    border-radius: $radius/2;
+    margin: 0 $size/4 $size/4 0;
+    background-color: $primary-color;
+  }
+
+  .row {
+    flex: 1;
+    display: flex;
 
     & > div {
-      font-size: 60%;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .tile {
+    color: black;
+    cursor: pointer;
+    border-radius: $radius/2;
+    margin: 0 $size/4 $size/4 0;
+    background-color: $light-grey;
+    color: darken($light-grey, 20%);
+    @include text-shadow(lighten($light-grey, 20%));
+
+    &.pair {
+      background-color: darken($light-grey, 10%);
+    }
+
+    &:hover {
+      color: $light-grey;
+      text-shadow: none !important;
+      background-color: darken($light-grey, 20%);
+    }
+
+    @each $position, $color in $positions-colors {
+      &.#{$position} {
+        background-color: $color;
+        color: darken($color, 40%);
+        @include text-shadow(lighten($color, 15%));
+
+        &:hover {
+          color: $color;
+          background-color: darken($color, 40%);
+        }
+      }
+    }
+
+    .text {
+      text-align: center;
+
+      & > div {
+        font-size: 60%;
+        line-height: 100%;
+        margin-top: $size/8;
+      }
     }
   }
 }

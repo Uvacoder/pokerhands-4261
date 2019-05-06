@@ -1,7 +1,6 @@
 $red: #e60000;
-$blue: #1c77c3;
+$blue: lightsteelblue;
 $light-grey: #efefef;
-
 $primary-color: darken($blue, 10%);
 
 $positions-colors: (
@@ -9,6 +8,12 @@ $positions-colors: (
   "hj": lightsalmon,
   "cu": khaki,
   "bt": palegreen,
-  "sb": paleturquoise,
-  "bb": darkkhaki
+  "sb": paleturquoise
+);
+
+$suit-colors: (
+  "spades": black,
+  "hearts": crimson,
+  "diamonds": cornflowerblue,
+  "clubs": lightseagreen
 );

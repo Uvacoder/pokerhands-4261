@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Header = props => (
-  <div className="hands-table-header">
-    <span className="hands-table-text">
+  <div className="header">
+    <span className="text">
       {props.card}
     </span>
   </div>

@@ -1,0 +1,20 @@
+@import './colors.scss';
+
+$size: 16px;
+$radius: 6px;
+$box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+
+$suit-unicodes: (
+  "spades": '\2660',
+  "hearts": '\2665',
+  "diamonds": '\2666',
+  "clubs": '\2663'
+);
+
+@mixin text-shadow($color) {
+  text-shadow: 0px 1px 1px $color;
+}
+
+@mixin suit-color($suit) {
+  color: map-get($suit-colors, $suit);
+}

@@ -50,8 +50,8 @@ const Stats = props => {
       <h3>Equity:</h3>
       <PreFlop game={props.game} />
       <Flop game={props.game} />
-      <River game={props.game} />
       <Turn game={props.game} />
+      <River game={props.game} />
     </div>
   );
 };
