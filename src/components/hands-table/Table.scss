@@ -37,8 +37,8 @@
   color: black;
   cursor: pointer;
   border-radius: 3px;
-  color: $primary-color;
   background-color: $light-grey;
+  color: darken($light-grey, 20%);
 
   &.pair {
     background-color: darken($light-grey, 10%);
@@ -46,7 +46,7 @@
 
   &:hover {
     color: $light-grey;
-    background-color: $primary-color;
+    background-color: darken($light-grey, 20%);
   }
 
   $positions-list: utg, hj, cu, bt, sb;
@@ -56,6 +56,19 @@
     &.#{$position} {
       background-color: $color;
       color: darken($color, 35%);
+
+      &:hover {
+        background-color: darken($color, 35%);
+        color: $color;
+      }
+    }
+  }
+
+  .hands-table-text {
+    text-align: center;
+
+    & > div {
+      font-size: 60%;
     }
   }
 }

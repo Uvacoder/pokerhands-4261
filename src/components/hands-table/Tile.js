@@ -18,6 +18,7 @@ const Tile = props => {
     >
       <span className="hands-table-text">
         {props.hand.getName()}
+        <div>{props.hand.nash}</div>
       </span>
     </div>
   );

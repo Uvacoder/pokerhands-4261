@@ -1,4 +1,5 @@
 import Card from './Card';
+import Nash from '../data/nash-simple';
 
 export const Cards = [
   'A', 'K', 'Q', 'J', 'T',
@@ -24,6 +25,8 @@ export default class Hand {
     }
 
     Object.assign(this, config);
+
+    this.nash = Nash[this.getName()];
   }
 
   getName() {
