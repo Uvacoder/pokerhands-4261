@@ -33,7 +33,7 @@
       margin-bottom: $size/2;
       box-shadow: $box-shadow;
       background-color: $light-grey;
-      flex-basis: calc(16.6% - $size);
+      flex-basis: calc(16.6% - #{$size});
       border: 2px solid $primary-color;
 
       h4 {
