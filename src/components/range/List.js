@@ -39,7 +39,7 @@ const List = props => {
 
   const ref = useRef(false);
   const positions = ['utg', 'hj', 'cu', 'bt', 'sb'];
-  const [selected, setSelected] = useState('utg')
+  const [selected, setSelected] = useState('utg');
   const [hands, setHands] = useState(props.hands);
 
   useEffect(() => {
