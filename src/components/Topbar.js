@@ -23,6 +23,9 @@ const Topbar = props => {
   }, {
     label: 'Game',
     route: '/game'
+  }, {
+    label: 'Table',
+    route: '/table'
   }];
 
   const getClass = item => {

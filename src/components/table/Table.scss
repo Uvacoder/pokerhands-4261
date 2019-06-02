@@ -1,0 +1,84 @@
+@import '../../styles/colors.scss';
+
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.game-table {
+  margin: 50px;
+  width: 80vw;
+  height: 36vh;
+  min-width: 500px;
+  min-height: 300px;
+  background-color: #4aad4a;
+  border-radius: 150px;
+  position: relative;
+  border: 15px solid #a95555;
+
+  &:before,
+  &:after {
+    content: "";
+    border: 7px solid rgba(0, 0, 0, .1);
+    display: block;
+    position: absolute;
+  }
+  
+  &:before {
+    width: calc(80vw + 15px);
+    height: calc(36vh + 15px);
+    min-width: 515px;
+    min-height: 315px;
+    border-radius: 150px;
+    top: -15px;
+    left: -15px;
+  }
+  
+  &:after {
+    width: calc(80vw - 15px);
+    height: calc(36vh - 15px);
+    min-width: 485px;
+    min-height: 285px;
+    border-radius: 130px;
+    top: 0;
+    left: 0;
+  }
+
+  &-pot {
+    padding: 20px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    border-radius: 7px;
+    min-width: 150px;
+    text-align: center;
+    position: absolute;
+    color: black;
+    background-color: rgba(0, 0, 0, .2);
+    border: 2px solid rgba(0, 0, 0, .2)
+  }
+
+  .card-place {
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    border: 3px solid $light-grey;
+    position: absolute;
+    
+    .card:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+  
+  .players {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    position: relative;
+  }
+}

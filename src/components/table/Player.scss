@@ -1,0 +1,179 @@
+@import '../../styles/colors.scss';
+
+.dealer {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.player,
+.dealer {
+  width: 150px;
+  border-radius: 7px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 2px solid black;
+  background-color: $light-grey;
+
+  .avatar {
+    flex: 1;
+    min-height: 50px;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .info {
+    flex: 2;
+    border-left: 2px solid black;
+    
+    .nickname {
+      padding: 5px 0;
+      font-size: 12px;
+      text-align: center;
+      color: black;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .separator {
+      height: 1px;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 10%;
+        right: 10%;
+        width: 80%;
+        height: 1px;
+        background-image: linear-gradient(to right, transparent, black, transparent);
+      }
+    }
+
+    .bank {
+      padding: 5px 0;
+      font-size: 12px;
+      text-align: center;
+      color: black;
+    }
+  }
+
+  .bet {
+    position: absolute;
+    font-size: 12px;
+    color: black;
+  }
+
+  &.player-1 {
+    top: 0;
+    left: 75%;
+    transform: translate(-50%, -50%);
+
+    .bet {
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 100%);
+    }
+  }
+
+  &.player-2 {
+    top: 25%;
+    right: 0;	
+    transform: translate(50%, -50%);
+
+    .bet {
+      top: 50%;
+      left: -20%;
+      transform: translate(-20%, -50%);
+    }
+  }
+
+  &.player-3 {
+    bottom: 25%;
+    right: 0;
+    transform: translate(50%, 50%);
+
+    .bet {
+      top: 50%;
+      left: -20%;
+      transform: translate(-20%, -50%);
+    }
+  }
+
+  &.player-4 {
+    bottom: 0;
+    left: 75%;
+    transform: translate(-50%, 50%);
+
+    .bet {
+      top: -50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.player-5 {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    .bet {
+      top: -50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.player-6 {
+    bottom: 0;
+    left: 25%;
+    transform: translate(-50%, 50%);
+
+    .bet {
+      top: -50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.player-7 {
+    bottom: 25%;
+    left: 0;	
+    transform: translate(-50%, 50%);
+
+    .bet {
+      top: 50%;
+      right: -20%;
+      transform: translate(-20%, -50%);
+    }
+  }
+
+  &.player-8 {
+    top: 25%;
+    left: 0;	
+    transform: translate(-50%, -50%);
+
+    .bet {
+      top: 50%;
+      right: -20%;
+      transform: translate(-20%, -50%);
+    }
+  }
+
+  &.player-9 {
+    top: 0;
+    left: 25%;
+    transform: translate(-50%, -50%);
+
+    .bet {
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 100%);
+    }
+  }
+}
