@@ -32,7 +32,7 @@ const Topbar = props => {
 
   return (
     <div className="topbar">
-      <h1><Logo /> Poker Range Manager</h1>
+      <h1><Logo /> Poker Probability and Hand Range Manager</h1>
       <div className="links">
         {items.map((item, i) => (
           <Link key={i} to={item.route} className={getClass(item)}>
